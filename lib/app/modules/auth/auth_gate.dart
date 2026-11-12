@@ -4,16 +4,47 @@ import 'package:get/get.dart';
 
 import '../../data/services/auth_service.dart';
 import '../home/home_view.dart';
+import '../splash/splash_view.dart';
 import 'login/login_view.dart';
 
 /// Single source of truth for "who sees what".
 ///
-/// Listens to `FirebaseAuth.instance.authStateChanges()` through
-/// [AuthService]: HomeScreen is shown only when the user is non-null,
-/// otherwise the Login screen. Logging in/out therefore switches screens
-/// automatically, and the session survives app restarts.
-class AuthGate extends StatelessWidget {
+/// Displays the full-bleed branded splash screen with the expanded Klader logo
+/// for 1.5 seconds on launch, then smoothly crossfades to either [HomeView] or
+/// [LoginView] based on `FirebaseAuth.instance.authStateChanges()`.
+class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
+
+  @override
+  State<AuthGate> createState() => _AuthGateState();
+}
+
+class _AuthGateState extends State<AuthGate> {
+  bool _isSplashVisible = true;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 1500), () {
+      if (mounted) {
+        setState(() {
+          _isSplashVisible = false;
+        });
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 350),
+      child: _isSplashVisible ? const SplashView() : const _AuthStreamContent(),
+    );
+  }
+}
+
+class _AuthStreamContent extends StatelessWidget {
+  const _AuthStreamContent();
 
   @override
   Widget build(BuildContext context) {
