@@ -7,11 +7,6 @@ import '../home/home_view.dart';
 import '../splash/splash_view.dart';
 import 'login/login_view.dart';
 
-/// Single source of truth for "who sees what".
-///
-/// Displays the full-bleed branded splash screen with the expanded Klader logo
-/// for 1.5 seconds on launch, then smoothly crossfades to either [HomeView] or
-/// [LoginView] based on `FirebaseAuth.instance.authStateChanges()`.
 class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
 
@@ -20,36 +15,32 @@ class AuthGate extends StatefulWidget {
 }
 
 class _AuthGateState extends State<AuthGate> {
-  bool _isSplashVisible = true;
+  bool _showSplash = true;
 
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    // Hold splash for 1.2 seconds so user sees the Klader logo clearly
+    Future.delayed(const Duration(milliseconds: 1200), () {
       if (mounted) {
-        setState(() {
-          _isSplashVisible = false;
-        });
+        setState(() => _showSplash = false);
       }
     });
   }
 
   @override
-  Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 350),
-      child: _isSplashVisible ? const SplashView() : const _AuthStreamContent(),
-    );
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(const AssetImage('assets/images/klader_logo.png'), context);
   }
-}
-
-class _AuthStreamContent extends StatelessWidget {
-  const _AuthStreamContent();
 
   @override
   Widget build(BuildContext context) {
-    final auth = Get.find<AuthService>();
+    if (_showSplash) {
+      return const SplashView();
+    }
 
+    final auth = Get.find<AuthService>();
     return StreamBuilder<User?>(
       stream: auth.authStateChanges,
       initialData: auth.currentUser,

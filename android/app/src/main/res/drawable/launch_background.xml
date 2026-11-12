@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Klader splash screen — whitish background matching login screen with dark-shade Klader logo PNG -->
+<!-- Native splash: plain #F5F6FA background only, NO logo.
+     Flutter's SplashScreen is the one and only visible splash. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <color android:color="#F5F6FA" />
-    </item>
-    <item
-        android:left="40dp"
-        android:right="40dp">
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/klader_logo"/>
     </item>
 </layer-list>
