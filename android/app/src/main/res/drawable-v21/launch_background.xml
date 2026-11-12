@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Klader splash screen (API 21+) — fully expanded gradient, no app/logo in the middle -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:gravity="fill"
+            android:src="@drawable/splash_bg"/>
+    </item>
+</layer-list>

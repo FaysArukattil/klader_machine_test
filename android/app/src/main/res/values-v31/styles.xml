@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+ (API 31+) splash screen using the SplashScreen API.
+     Fully expanded gradient background with no app/logo in the middle. -->
+<resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- Background color matching the brand gradient -->
+        <item name="android:windowSplashScreenBackground">#060859</item>
+        <!-- Transparent icon so Android 12+ does not display any icon in the middle -->
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <!-- Keep the splash until Flutter draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+</resources>
+

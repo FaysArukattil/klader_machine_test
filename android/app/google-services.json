@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "528381174586",
+    "project_id": "klader-machine-test",
+    "storage_bucket": "klader-machine-test.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528381174586:android:e25c269046f7abfd762603",
+        "android_client_info": {
+          "package_name": "com.faysarukattil.kladermachinetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528381174586-j1a3fndb4hsqumoc5ok2nu62e86gm0t4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgsE_7eRd3WrCPIW71n5DWdfRDt9FpmUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528381174586-j1a3fndb4hsqumoc5ok2nu62e86gm0t4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528381174586-4qoso0fal27un846n9kvgrkr5nbn23u6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.klader.kladerMachineTest"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528381174586:android:39a88a7abd3b4197762603",
+        "android_client_info": {
+          "package_name": "com.klader.klader_machine_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528381174586-j1a3fndb4hsqumoc5ok2nu62e86gm0t4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgsE_7eRd3WrCPIW71n5DWdfRDt9FpmUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528381174586-j1a3fndb4hsqumoc5ok2nu62e86gm0t4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528381174586-4qoso0fal27un846n9kvgrkr5nbn23u6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.klader.kladerMachineTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
